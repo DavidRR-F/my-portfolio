@@ -1,3 +1,61 @@
+# My Portfolio
+
+## Rough Draft Sketching
+
+### Palettes
+
+<div style="display: flex; gap: 10px;">
+<div>
+<div style="background-color: #F6F1F1; color: #212A3E; padding: 10px; border-top-left-radius: 15px; border-top-right-radius: 15px; width: 100px">
+  Background
+</div>
+<div style="background-color: #C9EEFF; color: #212A3E; padding: 10px; width: 100px">
+  Primary-1
+</div>
+<div style="background-color: #B0DAFF; color: #212A3E; padding: 10px; width: 100px">
+  Primary-2
+</div>
+<div style="background-color: #6DA9E4; color: #212A3E; padding: 10px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; width: 100px">
+  Primary-3
+</div>
+</div>
+<div>
+<div style="background-color: #2B2B28; color: #ffffff; padding: 10px; border-top-left-radius: 15px; border-top-right-radius: 15px; width: 100px">
+  Background
+</div>
+<div style="background-color: #595260; color: #ffffff; padding: 10px; width: 100px">
+  Primary-1
+</div>
+<div style="background-color: #B2B1B9; color: #212A3E; padding: 10px; width: 100px">
+  Primary-2
+</div>
+<div style="background-color: #EEEEEE; color: #212A3E; padding: 10px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; width: 100px">
+  Primary-3
+</div>
+</div>
+</div>
+
+### Libraries
+
+(Keep it to a minimum no one like deps)
+
+- Three JS
+- Tailwindcss
+- Next Core Libraries
+- Mongoose
+- React Youtube
+- Nodemailer
+- Next Auth
+
+### Layout
+
+![Rough Draft](image.png)
+
+### Logo
+
+All the cool developers have a logo
+![Alt text](public/logo.svg)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
