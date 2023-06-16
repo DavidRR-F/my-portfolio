@@ -1,19 +1,49 @@
 "use client";
-import { useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 
-type ThemeProviderProps = {
+type ProviderProps = {
   children: React.ReactNode;
 };
 
-const Providers = ({ children }: ThemeProviderProps) => {
+export const ScreenSizeContext = createContext<boolean | null>(null);
+
+const Providers = ({ children }: ProviderProps) => {
+  const [activeMenu, setActiveMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <>{children}</>;
-  return <ThemeProvider attribute="class">{children}</ThemeProvider>;
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    setIsMobile(window.innerWidth < 600);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  if (!mounted)
+    return (
+      <ScreenSizeContext.Provider value={isMobile}>
+        {children}
+      </ScreenSizeContext.Provider>
+    );
+  return (
+    <ThemeProvider attribute="class">
+      <ScreenSizeContext.Provider value={isMobile}>
+        {children}
+      </ScreenSizeContext.Provider>
+    </ThemeProvider>
+  );
 };
 
 export default Providers;
