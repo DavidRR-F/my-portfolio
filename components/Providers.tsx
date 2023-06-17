@@ -1,12 +1,22 @@
 "use client";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import { ThemeProvider } from "next-themes";
 
 type ProviderProps = {
   children: React.ReactNode;
 };
 
-export const ScreenSizeContext = createContext<boolean | null>(null);
+type InitState = {
+  activeMenu: boolean;
+  setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  isMobile: boolean | null;
+};
+
+const StateContext = createContext<InitState>({
+  activeMenu: false,
+  setActiveMenu: () => {},
+  isMobile: null,
+});
 
 const Providers = ({ children }: ProviderProps) => {
   const [activeMenu, setActiveMenu] = useState(false);
@@ -20,9 +30,16 @@ const Providers = ({ children }: ProviderProps) => {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 600);
+      if (window.innerWidth > 600) {
+        setActiveMenu(false);
+      }
     };
 
     setIsMobile(window.innerWidth < 600);
+
+    if (window.innerWidth > 600) {
+      setActiveMenu(false);
+    }
 
     window.addEventListener("resize", handleResize);
 
@@ -33,17 +50,18 @@ const Providers = ({ children }: ProviderProps) => {
 
   if (!mounted)
     return (
-      <ScreenSizeContext.Provider value={isMobile}>
+      <StateContext.Provider value={{ activeMenu, setActiveMenu, isMobile }}>
         {children}
-      </ScreenSizeContext.Provider>
+      </StateContext.Provider>
     );
   return (
     <ThemeProvider attribute="class">
-      <ScreenSizeContext.Provider value={isMobile}>
+      <StateContext.Provider value={{ activeMenu, setActiveMenu, isMobile }}>
         {children}
-      </ScreenSizeContext.Provider>
+      </StateContext.Provider>
     </ThemeProvider>
   );
 };
 
 export default Providers;
+export const useStateContext = () => useContext(StateContext);
