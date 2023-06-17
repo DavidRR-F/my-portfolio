@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  /* @apply bg-light-bg dark:bg-dark-bg; */
+html,
+body,
+.root {
+  font-family: "Inter", sans-serif;
+  height: 100%;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+.canvas {
+  width: 100%;
+  height: 79vh;
 }
 
 /* Meme toggle */

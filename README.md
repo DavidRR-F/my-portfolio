@@ -40,6 +40,8 @@
 (Keep it to a minimum no one like deps)
 
 - Three JS
+- React Three Fiber/Drei
+- Maath
 - Tailwindcss
 - Next Core Libraries
 - Mongoose
