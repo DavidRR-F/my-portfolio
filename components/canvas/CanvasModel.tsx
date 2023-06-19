@@ -15,7 +15,11 @@ const CanvasModel = () => {
         gl={{ preserveDrawingBuffer: true }}
         className="w-full max-w-full transition-all ease-in"
       >
-        <hemisphereLight color="white" groundColor="blue" intensity={0.75} />
+        <hemisphereLight
+          color="white"
+          groundColor="rgb(26, 149, 232)"
+          intensity={0.65}
+        />
         <spotLight position={[50, 50, 10]} angle={0.15} penumbra={1} />
         <Camera>
           <Center>

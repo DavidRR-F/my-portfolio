@@ -1,6 +1,4 @@
 "use client";
-
-import { useContext } from "react";
 import { useStateContext } from "../Providers";
 
 const MenuIcon = () => {

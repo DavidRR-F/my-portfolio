@@ -12,22 +12,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        light: {
-          bg: "#F6F1F1",
-          primary: {
-            1: "#C9EEFF",
-            2: "#9ac5f4",
-            3: "#6DA9E4",
-          },
-        },
-        dark: {
-          bg: "#2B2B28",
-          primary: {
-            1: "#595260",
-            2: "#B2B1B9",
-            3: "#EEEEEE",
-          },
-        },
+        "tinted-black": "#0B0C10",
+        "neon-blue": "#0BF9EA",
+        "dark-grey-blue": "#1F2833",
+        "light-neon-blue": "#66FCF1",
       },
     },
   },

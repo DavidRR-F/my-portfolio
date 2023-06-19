@@ -1,6 +1,5 @@
 "use client";
 import { createContext, useState, useEffect, useContext } from "react";
-import { ThemeProvider } from "next-themes";
 
 type ProviderProps = {
   children: React.ReactNode;
@@ -21,11 +20,6 @@ const StateContext = createContext<InitState>({
 const Providers = ({ children }: ProviderProps) => {
   const [activeMenu, setActiveMenu] = useState(false);
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,18 +42,10 @@ const Providers = ({ children }: ProviderProps) => {
     };
   }, []);
 
-  if (!mounted)
-    return (
-      <StateContext.Provider value={{ activeMenu, setActiveMenu, isMobile }}>
-        {children}
-      </StateContext.Provider>
-    );
   return (
-    <ThemeProvider attribute="class">
-      <StateContext.Provider value={{ activeMenu, setActiveMenu, isMobile }}>
-        {children}
-      </StateContext.Provider>
-    </ThemeProvider>
+    <StateContext.Provider value={{ activeMenu, setActiveMenu, isMobile }}>
+      {children}
+    </StateContext.Provider>
   );
 };
 
