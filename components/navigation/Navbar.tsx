@@ -10,7 +10,7 @@ const Navbar = () => {
     setActiveMenu((prevState) => !prevState);
   };
   return (
-    <div className="absolute w-full">
+    <div className="absolute w-full z-10">
       <div className="flex items-center justify-between w-full h-20 p-4">
         <img src="/logo.svg" alt="Logo Icon" className="w-12 h-12" />
         {isMobile ? (
