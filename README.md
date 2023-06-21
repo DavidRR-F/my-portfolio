@@ -9,6 +9,8 @@
 - Three JS
 - React Three Fiber/Drei
 - Maath
+- Framer Motion
+- Intersection Observer
 - Tailwindcss
 - Next Core Libraries
 - Mongoose
