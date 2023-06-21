@@ -10,19 +10,18 @@ const Landing = () => {
   };
   return (
     <div className="video-background">
-      <video
-        ref={videoRef}
-        width="100%"
-        height="100%"
-        loop
-        autoPlay
-        muted
-        onContextMenu={handleContextMenu}
-        className="background-video"
-      >
-        <source src="/lc-temp.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div className="background-video">
+        <video
+          ref={videoRef}
+          loop
+          autoPlay
+          muted
+          preload="metadata"
+          src="/lc-temp.mp4"
+          onContextMenu={handleContextMenu}
+          className="background-video"
+        />
+      </div>
       <div className="header-text">
         <Animate direction="down">
           <h1 className="glassmorphism">David Rose-Franklin</h1>

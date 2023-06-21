@@ -6,8 +6,15 @@ html,
 body,
 .root {
   font-family: "Poppins", sans-serif;
-  height: 100%;
-  @apply bg-tinted-black text-neon-blue;
+  background-color: rgb(14, 18, 24);
+  @apply text-neon-blue;
+}
+
+img,
+video,
+canvas {
+  overflow: clip;
+  clip-path: inset(1px 1px);
 }
 
 .head-text {
@@ -58,21 +65,8 @@ a:hover {
   min-width: 100%;
   min-height: 100%;
   width: auto;
-  height: auto;
+  height: 100vh;
   object-fit: cover;
-}
-
-.section {
-  opacity: 0; /* Start with opacity set to 0 */
-  transform: translateY(20px); /* Start with a vertical offset */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Define the transition properties */
-}
-
-.section.animate {
-  opacity: 1; /* Increase opacity to 1 when the element enters the viewport */
-  transform: translateY(
-    0
-  ); /* Reset the vertical offset when the element enters the viewport */
 }
 
 .header-text {
