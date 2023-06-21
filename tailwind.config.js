@@ -12,7 +12,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        "tinted-black": "#0B0C10",
+        "tinted-black": "rgb(14, 18, 28)",
         "neon-blue": "#0BF9EA",
         "dark-grey-blue": "#1F2833",
         "light-neon-blue": "#66FCF1",

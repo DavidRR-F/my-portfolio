@@ -1,7 +1,8 @@
 "use client";
 import { MutableRefObject, useRef } from "react";
+import Animate from "../components/animation/Animate";
 
-const Background = () => {
+const Landing = () => {
   const videoRef: MutableRefObject<HTMLVideoElement | null> = useRef(null);
 
   const handleContextMenu = (event: { preventDefault: () => void }) => {
@@ -23,11 +24,15 @@ const Background = () => {
         Your browser does not support the video tag.
       </video>
       <div className="header-text">
-        <h1 className="glassmorphism">David Rose-Franklin</h1>
-        <span>Software Developer</span>
+        <Animate direction="down">
+          <h1 className="glassmorphism">David Rose-Franklin</h1>
+        </Animate>
+        <Animate direction="up">
+          <span>Software Developer</span>
+        </Animate>
       </div>
     </div>
   );
 };
 
-export default Background;
+export default Landing;
