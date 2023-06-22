@@ -10,24 +10,27 @@ const Landing = () => {
   };
   return (
     <div className="video-background">
-      <div className="background-video">
-        <video
-          ref={videoRef}
-          loop
-          autoPlay
-          muted
-          preload="metadata"
-          src="/lc-temp.mp4"
-          onContextMenu={handleContextMenu}
-          className="background-video"
-        />
-      </div>
-      <div className="header-text">
+      <video
+        ref={videoRef}
+        loop
+        autoPlay
+        muted
+        preload="metadata"
+        src="/0000-1000.mp4"
+        onContextMenu={handleContextMenu}
+        className="background-video"
+      />
+      <div className="video-wrapper"></div>
+      <div className="title">
         <Animate direction="down">
-          <h1 className="glassmorphism">David Rose-Franklin</h1>
+          <h1 className=" text-gray-300 font-semibold text-6xl">
+            David Rose-Franklin
+          </h1>
         </Animate>
         <Animate direction="up">
-          <span>Software Developer</span>
+          <span className="text-gray-400 font-semibold text-4xl">
+            Software Developer
+          </span>
         </Animate>
       </div>
     </div>

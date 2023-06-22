@@ -6,7 +6,7 @@ html,
 body,
 .root {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(14, 18, 24);
+  background-color: rgb(12, 21, 29);
   @apply text-neon-blue;
 }
 
@@ -17,11 +17,17 @@ canvas {
   clip-path: inset(1px 1px);
 }
 
-.head-text {
-  font-size: 8rem;
-  line-height: 11rem;
-  font-weight: 700;
-  color: white;
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scroll bar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(30, 38, 51); /* Set the color of the scroll bar thumb */
+  border-radius: 5px; /* Set the border radius of the scroll bar thumb */
 }
 
 a {
@@ -55,6 +61,7 @@ a:hover {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color: transparent;
 }
 
 .background-video {
@@ -69,12 +76,20 @@ a:hover {
   object-fit: cover;
 }
 
-.header-text {
+.video-wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  box-shadow: inset 0px -100px 80px rgb(12, 21, 29);
+}
+
+.title {
+  position: absolute;
+  top: 30%;
+  left: 30%;
   transform: translate(-50%, -50%);
-  color: rgb(237, 195, 148);
-  text-align: center;
-  font-size: 3em;
+  width: fit-content;
 }
