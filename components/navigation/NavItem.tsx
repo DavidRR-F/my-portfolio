@@ -8,7 +8,7 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ order, name }) => {
   return (
     <li className="flex justify-center items-center">
-      <button>{name}</button>
+      <button className="text-gray-300">{name}</button>
     </li>
   );
 };
