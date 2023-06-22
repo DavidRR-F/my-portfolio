@@ -86,9 +86,11 @@ a:hover {
   box-shadow: inset 400px -100px 80px rgb(12, 21, 29);
 }
 
+/* svg gradiant #FF836D #FFDAAB #FF351A #FF9F22 */
+
 .title {
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 30%;
   transform: translate(-50%, -50%);
   width: fit-content;
