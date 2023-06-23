@@ -32,10 +32,14 @@ canvas {
 
 a {
   @apply text-light-neon-blue;
+  background-image: none;
 }
 
 a:hover {
-  @apply text-neon-blue;
+  background-image: linear-gradient(to bottom right, #ff836d 50%, #ffdaab 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s;
 }
 
 .button-primary {

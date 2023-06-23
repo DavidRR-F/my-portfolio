@@ -42,12 +42,12 @@ const Landing = () => {
       <div className="video-wrapper"></div>
       <div className="title">
         <Animate direction="down">
-          <h1 className=" text-gray-300 font-semibold text-6xl mobile:text-dynamic">
+          <h1 className=" text-gray-300 font-semibold text-6xl mobile:text-dynamic select-none">
             David Rose-Franklin
           </h1>
         </Animate>
         <Animate direction="up">
-          <span className="text-gray-400 font-semibold text-4xl mobile:text-dynamic2">
+          <span className="text-gray-400 font-semibold text-4xl mobile:text-dynamic2 select-none">
             Design. Develop. Deploy.
           </span>
         </Animate>
@@ -58,7 +58,7 @@ const Landing = () => {
                 <img
                   src={`${item.name}.svg`}
                   alt={`${item.name} icon`}
-                  className="w-12 h-12 mobile:w-8 mobile:h-8 mobile:rounded-lg small-icon"
+                  className="w-12 h-12 mobile:w-8 mobile:h-8 mobile:rounded-lg small-icon hover:rotate-left transition-transform duration-300 ease-in-out"
                 />
               </a>
             </Animate>
