@@ -42,23 +42,23 @@ const Landing = () => {
       <div className="video-wrapper"></div>
       <div className="title">
         <Animate direction="down">
-          <h1 className=" text-gray-300 font-semibold text-6xl">
+          <h1 className=" text-gray-300 font-semibold text-6xl mobile:text-dynamic">
             David Rose-Franklin
           </h1>
         </Animate>
         <Animate direction="up">
-          <span className="text-gray-400 font-semibold text-4xl">
+          <span className="text-gray-400 font-semibold text-4xl mobile:text-dynamic2">
             Design. Develop. Deploy.
           </span>
         </Animate>
-        <ul className="flex gap-2 pt-2">
+        <ul className="flex gap-2 pt-2 justify-start tablet:justify-center">
           {list.map((item, index) => (
             <Animate key={index} direction="left" delay={index / 10 + 0.1}>
               <a href={item.link}>
                 <img
                   src={`${item.name}.svg`}
                   alt={`${item.name} icon`}
-                  className="w-12 h-12"
+                  className="w-12 h-12 mobile:w-8 mobile:h-8 mobile:rounded-lg small-icon"
                 />
               </a>
             </Animate>

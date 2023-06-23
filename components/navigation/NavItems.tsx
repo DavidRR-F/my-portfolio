@@ -20,7 +20,7 @@ const listItems = [
 ];
 const NavItems = () => {
   return (
-    <ul className="flex flex-col items-center gap-5 mobile:flex-row pr-5">
+    <ul className="flex flex-row items-center gap-5 mobile:flex-col pr-5">
       {listItems.map((item) => (
         <NavItem key={item.key} order={item.key} name={item.name} />
       ))}

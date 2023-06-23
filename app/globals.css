@@ -95,3 +95,27 @@ a:hover {
   transform: translate(-50%, -50%);
   width: fit-content;
 }
+
+@media (max-width: 999px) {
+  .background-video {
+    left: 50%;
+  }
+  .video-wrapper {
+    box-shadow: inset 0px -100px 80px rgb(12, 21, 29);
+  }
+  .title {
+    top: 30%;
+    left: 50%;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .small-icon {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 42px 0 rgba(135, 60, 31, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    mix-blend-mode: lighten;
+  }
+}

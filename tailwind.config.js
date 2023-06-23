@@ -8,10 +8,14 @@ module.exports = {
   ],
   theme: {
     screens: {
-      mobile: "600px",
-      tablet: "1000px",
+      mobile: { max: "600px" },
+      tablet: { max: "1000px" },
     },
     extend: {
+      fontSize: {
+        dynamic: "9.5vw",
+        dynamic2: "7vw",
+      },
       colors: {
         "tinted-black": "rgb(27, 34, 46)",
         "neon-blue": "#0BF9EA",
