@@ -18,6 +18,7 @@ const listItems = [
     name: "Contact",
   },
 ];
+
 const NavItems = () => {
   return (
     <ul className="flex flex-row items-center gap-5 mobile:flex-col pr-5 text-lg">

@@ -33,6 +33,7 @@ canvas {
 a {
   @apply text-light-neon-blue;
   background-image: none;
+  transition: all 0.5s;
 }
 
 a:hover {
@@ -121,5 +122,19 @@ a:hover {
     border-radius: 15px;
     border: 2px solid rgba(255, 255, 255, 0.18);
     mix-blend-mode: lighten;
+  }
+  ::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: transparent;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
   }
 }

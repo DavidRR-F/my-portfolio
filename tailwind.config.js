@@ -29,7 +29,7 @@ module.exports = {
           200: "#FF351A",
         },
         forground: {
-          100: "rgb(209 213 219",
+          100: "rgb(209 213 219)",
           200: "rgb(156 163 175)",
         },
         background: {

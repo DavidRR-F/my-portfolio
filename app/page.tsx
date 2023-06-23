@@ -1,15 +1,17 @@
-import Animate from "@/components/animation/Animate";
+import About from "@/sections/About";
+import Contact from "@/sections/Contact";
 import Landing from "@/sections/Landing";
+import Projects from "@/sections/Projects";
+import Skills from "@/sections/Skills";
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
       <Landing />
-      <div className="flex justify-center items-center w-screen h-screen">
-        <Animate direction="up">
-          <h1>Hello World</h1>
-        </Animate>
-      </div>
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
     </main>
   );
 }
