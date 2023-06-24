@@ -38,7 +38,7 @@ const About = () => {
 
   return (
     <Section id="about">
-      <div>Profile Pic</div>
+      <div>Profile Pic or 3D Animation</div>
       <div>
         <Animate direction="down">
           <h2 className=" text-forground-100 text-4xl">

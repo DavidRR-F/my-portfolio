@@ -58,9 +58,28 @@ const skills = [
   },
 ];
 
+const code = [
+  {
+    name: "Typescript",
+    value: 0.9,
+  },
+  {
+    name: "Python",
+    value: 0.8,
+  },
+  {
+    name: "Java",
+    value: 0.6,
+  },
+  {
+    name: "SQL",
+    value: 0.7,
+  },
+];
+
 const Skills = () => {
   return (
-    <Section id="skills">
+    <Section id="skills" className="flex-col">
       <div className="flex gap-5 flex-wrap">
         {skills.map((skill, index) => (
           <Animate direction="down" delay={index / 10 + 0.5}>
@@ -96,6 +115,41 @@ const Skills = () => {
             </Card>
           </Animate>
         ))}
+      </div>
+      <div className="grid grid-cols-2 w-full max-w-5xl">
+        <section className="flex flex-col gap-3 col-span-full p-3">
+          <div className="flex items-center gap-4">
+            <div className="bg-background-100 rounded-full p-3 w-fit h-fit">
+              <img src="/code.png" alt="Programming Skills" />
+            </div>
+            <h3 className="text-3xl">Programming Skills</h3>
+          </div>
+          {code.map((item, index) => (
+            <div className="flex items-center">
+              <label
+                className="text-2xl font-semibold w-40"
+                htmlFor={`${item.name}-bar`}
+              >
+                {item.name}
+              </label>
+              <progress
+                id={`${item.name}-bar`}
+                className="w-full"
+                value={item.value}
+              />
+            </div>
+          ))}
+        </section>
+        <section>
+          <div className="bg-background-100 rounded-full p-3 w-fit h-fit">
+            <img src="/work.png" alt="Work Experience" />
+          </div>
+        </section>
+        <section>
+          <div className="bg-background-100 rounded-full p-3 w-fit h-fit">
+            <img src="/education.png" alt="Education" />
+          </div>
+        </section>
       </div>
     </Section>
   );

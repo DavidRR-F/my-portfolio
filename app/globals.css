@@ -42,6 +42,43 @@ canvas {
   border: 0;
 }
 
+progress {
+  height: 10px; /* Set the height of the progress bar */
+  border-radius: 10px;
+}
+
+/* Styling the progress value */
+progress::-webkit-progress-value {
+  background-image: linear-gradient(
+    to right,
+    #ff836d,
+    #ff351a,
+    #ff9f22
+  ); /* Set the color of the progress value */
+  border-radius: 10px;
+}
+
+/* Styling the progress bar background */
+progress::-webkit-progress-bar {
+  background-color: rgb(
+    27,
+    34,
+    46
+  ); /* Set the color of the progress bar background */
+  border-radius: 10px;
+}
+
+/* Styling the progress bar container */
+progress::-moz-progress-bar {
+  background-image: linear-gradient(
+    to right,
+    #ff836d,
+    #ff351a,
+    #ff9f22
+  ); /* Set the color of the progress bar */
+  border-radius: 10px;
+}
+
 a {
   background-image: none;
   transition: all 0.5s;
