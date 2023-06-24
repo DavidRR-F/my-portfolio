@@ -18,9 +18,10 @@ const skills = [
     subSkills: [
       {
         subTitle: "Design",
+        subIcon: "/design.png",
         toolIcons: [
           { tip: "Tailwindcss", image: "/tailwindcss.svg" },
-          { tip: "SASS", image: "/scss.svg" },
+          { tip: "SASS", image: "/sass.svg" },
           { tip: "Figma", image: "/figma.svg" },
         ],
       },
@@ -30,16 +31,17 @@ const skills = [
     title: "Backend Dev",
     icon: "/backend.svg",
     frameworks: [
-      { name: "Spring Boot", color: "lime" },
+      { name: "SpringBoot", color: "lime" },
       { name: "ExpressJS", color: "blue" },
       { name: "FastAPI", color: "green" },
     ],
-    text: "",
+    text: "Bleh SpringBoot bleh ExpressJS bleh FastAPI",
     subSkills: [
       {
         subTitle: "Databases",
+        subIcon: "/database.png",
         toolIcons: [
-          { tip: "PostgreSQL", image: "/postgres.svg" },
+          { tip: "PostgreSQL", image: "/postgresql.svg" },
           { tip: "MySQL", image: "/mysql.svg" },
           { tip: "MongoDB", image: "/mongodb.svg" },
         ],
@@ -48,15 +50,16 @@ const skills = [
   },
   {
     title: "DevOps",
-    icon: "/devops.svg",
+    icon: "/devops.png",
     frameworks: [
       { name: "Docker", color: "blue" },
       { name: "Kubernetes", color: "sky" },
     ],
-    text: "",
+    text: "Bleh Docker bleh bleh bleh Kubernetes",
     subSkills: [
       {
         subTitle: "CI/CD",
+        subIcon: "/cicd.png",
         toolIcons: [
           { tip: "Jenkins", image: "/jenkins.svg" },
           { tip: "Github Actions", image: "/ghactions.svg" },
@@ -64,6 +67,7 @@ const skills = [
       },
       {
         subTitle: "Cloud",
+        subIcon: "/cloud.png",
         toolIcons: [
           { tip: "Azure", image: "/azure.svg" },
           { tip: "AWS", image: "/aws.svg" },
@@ -92,9 +96,14 @@ const Skills = () => {
               </div>
               <StaggerChildren text={skill.text} keys={skill.frameworks} />
               {skill.subSkills.map((sub, index) => (
-                <div>
+                <div className="flex items-center justify-start gap-3">
+                  <img
+                    className="w-8 h-8"
+                    src={sub.subIcon}
+                    alt={`${sub.subTitle} Icon`}
+                  />
                   <h3>{sub.subTitle}</h3>
-                  <ul className="flex">
+                  <ul className="flex gap-5">
                     {sub.toolIcons.map((icon, index) => (
                       <IconToolTip text={icon.tip}>
                         <img
