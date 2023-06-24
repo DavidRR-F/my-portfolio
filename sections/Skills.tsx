@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import Header from "@/components/Header";
 import IconToolTip from "@/components/IconToolTip";
 import Section from "@/components/Section";
 import Animate from "@/components/animation/Animate";
@@ -118,16 +119,11 @@ const Skills = () => {
       </div>
       <div className="grid grid-cols-2 w-full max-w-5xl">
         <section className="flex flex-col gap-3 col-span-full p-3">
-          <div className="flex items-center gap-4">
-            <div className="bg-background-100 rounded-full p-3 w-fit h-fit">
-              <img src="/code.png" alt="Programming Skills" />
-            </div>
-            <h3 className="text-3xl">Programming Skills</h3>
-          </div>
+          <Header label="Programing Skills" icon="/code.png" />
           {code.map((item, index) => (
             <div className="flex items-center">
               <label
-                className="text-2xl font-semibold w-40"
+                className="text-2xl font-semibold text-forground-200 pl-2 w-40"
                 htmlFor={`${item.name}-bar`}
               >
                 {item.name}
@@ -140,15 +136,11 @@ const Skills = () => {
             </div>
           ))}
         </section>
-        <section>
-          <div className="bg-background-100 rounded-full p-3 w-fit h-fit">
-            <img src="/work.png" alt="Work Experience" />
-          </div>
+        <section className="flex flex-col gap-3 p-3">
+          <Header label="Work Experience" icon="/work.png" />
         </section>
-        <section>
-          <div className="bg-background-100 rounded-full p-3 w-fit h-fit">
-            <img src="/education.png" alt="Education" />
-          </div>
+        <section className="flex flex-col p-3">
+          <Header label="Education Level" icon="/education.png" />
         </section>
       </div>
     </Section>
