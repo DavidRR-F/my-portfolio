@@ -33,8 +33,8 @@ module.exports = {
           200: "rgb(156 163 175)",
         },
         background: {
-          100: "rgb(12, 21, 29)",
-          200: "rgb(27, 34, 46)",
+          100: "rgb(27, 34, 46)",
+          200: "rgb(12, 21, 29)",
         },
         "tinted-black": "rgb(27, 34, 46)",
         "neon-blue": "#0BF9EA",
