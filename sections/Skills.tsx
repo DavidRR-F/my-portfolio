@@ -14,17 +14,12 @@ const skills = [
       { name: "NextJS", color: "red" },
       { name: "Angular", color: "pink" },
     ],
-    text: "Bleh React bleh NextJS bleh Angular",
-    subSkills: [
-      {
-        subTitle: "Design",
-        subIcon: "/design.png",
-        toolIcons: [
-          { tip: "Tailwindcss", image: "/tailwindcss.svg" },
-          { tip: "SASS", image: "/sass.svg" },
-          { tip: "Figma", image: "/figma.svg" },
-        ],
-      },
+    text: "With a strong passion for UI/UX design, I bring a dedicated focus on creating exceptional user experiences. My expertise lies in leveraging React with NextJS and Angular to develop cutting-edge web applications.",
+
+    toolIcons: [
+      { tip: "Tailwindcss", image: "/tailwindcss.svg" },
+      { tip: "SASS", image: "/sass.svg" },
+      { tip: "Figma", image: "/figma.svg" },
     ],
   },
   {
@@ -35,17 +30,12 @@ const skills = [
       { name: "ExpressJS", color: "blue" },
       { name: "FastAPI", color: "green" },
     ],
-    text: "Bleh SpringBoot bleh ExpressJS bleh FastAPI",
-    subSkills: [
-      {
-        subTitle: "Databases",
-        subIcon: "/database.png",
-        toolIcons: [
-          { tip: "PostgreSQL", image: "/postgresql.svg" },
-          { tip: "MySQL", image: "/mysql.svg" },
-          { tip: "MongoDB", image: "/mongodb.svg" },
-        ],
-      },
+    text: "I bring a dedicated focus on building robust and efficient server-side applications. I utilize SpringBoot to create powerful backend solutions with experience in ExpressJS and FastAPI for smaller microservice solution.",
+
+    toolIcons: [
+      { tip: "PostgreSQL", image: "/postgresql.svg" },
+      { tip: "MySQL", image: "/mysql.svg" },
+      { tip: "MongoDB", image: "/mongodb.svg" },
     ],
   },
   {
@@ -54,25 +44,16 @@ const skills = [
     frameworks: [
       { name: "Docker", color: "blue" },
       { name: "Kubernetes", color: "sky" },
+      { name: "CI/CD", color: "lime" },
+      { name: "Cloud", color: "red" },
     ],
-    text: "Bleh Docker bleh bleh bleh Kubernetes",
-    subSkills: [
-      {
-        subTitle: "CI/CD",
-        subIcon: "/cicd.png",
-        toolIcons: [
-          { tip: "Jenkins", image: "/jenkins.svg" },
-          { tip: "Github Actions", image: "/ghactions.svg" },
-        ],
-      },
-      {
-        subTitle: "Cloud",
-        subIcon: "/cloud.png",
-        toolIcons: [
-          { tip: "Azure", image: "/azure.svg" },
-          { tip: "AWS", image: "/aws.svg" },
-        ],
-      },
+    text: "Experience with Docker and Kubernetes to ensuring efficient application Cloud deployment to end users. Experties in CI/CD development workflows to deploy and enforcing source code version controls.",
+    toolIcons: [
+      { tip: "Jenkins", image: "/jenkins.svg" },
+      { tip: "Bitbucket", image: "/bitbucket.svg" },
+      { tip: "Github", image: "/ghactions.svg" },
+      { tip: "Azure", image: "/azure.svg" },
+      { tip: "AWS", image: "/aws.svg" },
     ],
   },
 ];
@@ -80,31 +61,27 @@ const skills = [
 const Skills = () => {
   return (
     <Section id="skills">
-      <div className="flex gap-5 dec">
+      <div className="flex gap-5 flex-wrap">
         {skills.map((skill, index) => (
           <Animate direction="down" delay={index / 10 + 0.5}>
             <Card>
-              <div className="flex justify-start items-center gap-3">
-                <img
-                  src={skill.icon}
-                  alt={`${skill.title} Icon`}
-                  className="w-12 h-12"
-                />
-                <h2>
-                  <strong className="text-3xl">{skill.title}</strong>
-                </h2>
-              </div>
-              <StaggerChildren text={skill.text} keys={skill.frameworks} />
-              {skill.subSkills.map((sub, index) => (
-                <div className="flex items-center justify-start gap-3">
-                  <img
-                    className="w-8 h-8"
-                    src={sub.subIcon}
-                    alt={`${sub.subTitle} Icon`}
-                  />
-                  <h3>{sub.subTitle}</h3>
+              <div className="flex flex-col justify-between items-center min-h-full">
+                <section>
+                  <div className="flex justify-start items-center gap-3">
+                    <img
+                      src={skill.icon}
+                      alt={`${skill.title} Icon`}
+                      className="w-12 h-12"
+                    />
+                    <h2>
+                      <strong className="text-3xl">{skill.title}</strong>
+                    </h2>
+                  </div>
+                  <StaggerChildren text={skill.text} keys={skill.frameworks} />
+                </section>
+                <section>
                   <ul className="flex gap-5">
-                    {sub.toolIcons.map((icon, index) => (
+                    {skill.toolIcons.map((icon, index) => (
                       <IconToolTip text={icon.tip}>
                         <img
                           className="w-6 h-6"
@@ -114,8 +91,8 @@ const Skills = () => {
                       </IconToolTip>
                     ))}
                   </ul>
-                </div>
-              ))}
+                </section>
+              </div>
             </Card>
           </Animate>
         ))}
