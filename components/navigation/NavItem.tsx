@@ -24,7 +24,7 @@ const NavItem: React.FC<NavItemProps> = ({ order, name }) => {
         {name}
       </Link>
       <span
-        className={`pt-1 left-12 top-0 text-xs font-mono select-none ${
+        className={`pt-1 left-12 top-0 text-xs font-mono ${
           activeSection === name.toLowerCase()
             ? "text-primary-200"
             : "text-gray-200"

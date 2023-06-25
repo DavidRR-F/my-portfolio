@@ -42,13 +42,13 @@ const Landing = () => {
       <div className="video-wrapper"></div>
       <div className="title">
         <Animate direction="down">
-          <h1 className="flex flex-nowrap items-center justify-center text-gray-300 font-semibold text-6xl mobile:text-dynamic phone:flex-wrap select-none">
+          <h1 className="flex flex-nowrap items-center justify-center text-gray-300 font-semibold text-6xl mobile:text-dynamic phone:flex-wrap">
             <span className="pr-2 phone:pr-0">David</span>
             <span>Rose-Franklin</span>
           </h1>
         </Animate>
         <Animate direction="up">
-          <span className="text-gray-400 font-semibold text-4xl mobile:text-dynamic2 select-none">
+          <span className="text-gray-400 font-semibold text-4xl mobile:text-dynamic2">
             Design. Develop. Deploy.
           </span>
         </Animate>
