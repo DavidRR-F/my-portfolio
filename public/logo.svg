@@ -1,0 +1,44 @@
+<svg
+  id="e7jmrpZlfLt1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 24 24"
+  shape-rendering="geometricPrecision"
+  text-rendering="geometricPrecision"
+>
+  <defs>
+    <linearGradient
+      id="e7jmrpZlfLt2-stroke"
+      x1="0.5"
+      y1="-0.046356"
+      x2="0.5"
+      y2="1.046356"
+      spreadMethod="pad"
+      gradientUnits="objectBoundingBox"
+      gradientTransform="translate(0 0)"
+    >
+      <stop id="e7jmrpZlfLt2-stroke-0" offset="0%" stop-color="#ff351a" />
+      <stop id="e7jmrpZlfLt2-stroke-1" offset="99%" stop-color="#ff9f22" />
+    </linearGradient>
+    <linearGradient
+      id="e7jmrpZlfLt3-fill"
+      x1="0.438459"
+      y1="0.022903"
+      x2="0.438459"
+      y2="0.977097"
+      spreadMethod="pad"
+      gradientUnits="objectBoundingBox"
+      gradientTransform="translate(0 0)"
+    >
+      <stop id="e7jmrpZlfLt3-fill-0" offset="41%" stop-color="#fd684d" />
+      <stop id="e7jmrpZlfLt3-fill-1" offset="69%" stop-color="#fdc47b" />
+    </linearGradient>
+  </defs>
+  <path
+    d="M24,0c0,12,0,10.086958,0,12c0,6.607403-4.526751,12-12,12C3.895107,24,0,18.607405,0,12C0,5.60213,4.414382,0,12,0c4.965675,0,12,0,12,0Z"
+    transform="matrix(.903261 0 0 0.915154 1.160868 1.018152)"
+    fill="none"
+    stroke="url(#e7jmrpZlfLt2-stroke)"
+    stroke-width="2"
+  />
+</svg>

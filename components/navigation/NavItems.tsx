@@ -11,7 +11,7 @@ const listItems = [
   },
   {
     key: 3,
-    name: "Projects",
+    name: "Experience",
   },
   {
     key: 4,
