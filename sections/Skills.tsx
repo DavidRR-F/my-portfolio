@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import Header from "@/components/Header";
 import IconToolTip from "@/components/IconToolTip";
+import ProfessionListItem from "@/components/ProfessionListItem";
 import Section from "@/components/Section";
 import Animate from "@/components/animation/Animate";
 import { StaggerChildren } from "@/components/animation/StaggerChildren";
@@ -78,6 +79,32 @@ const code = [
   },
 ];
 
+const work = [
+  {
+    title: "Programming Analyst",
+    start: "Feb 2023",
+    end: "Now",
+  },
+  {
+    title: "Frontend Developer",
+    start: "Jan 2022",
+    end: "Feb 2023",
+  },
+];
+
+const education = [
+  {
+    title: "Bachelors of Computer Science",
+    start: "Apr 2019",
+    end: "Dec 2021",
+  },
+  {
+    title: "Associates of Computer Science",
+    start: "Sep 2017",
+    end: "Dec 2019",
+  },
+];
+
 const Skills = () => {
   return (
     <Section id="skills" className="flex-col">
@@ -138,9 +165,15 @@ const Skills = () => {
         </section>
         <section className="flex flex-col gap-3 p-3">
           <Header label="Work Experience" icon="/work.png" />
+          <div className="pl-16">
+            <ProfessionListItem profession={work} />
+          </div>
         </section>
-        <section className="flex flex-col p-3">
+        <section className="flex flex-col gap-3 p-3">
           <Header label="Education Level" icon="/education.png" />
+          <div className="pl-16">
+            <ProfessionListItem profession={education} />
+          </div>
         </section>
       </div>
     </Section>

@@ -91,6 +91,10 @@ a:hover {
   transition: all 0.5s;
 }
 
+ul {
+  position: relative;
+}
+
 .button-primary {
   @apply bg-neon-blue text-tinted-black;
 }
@@ -203,6 +207,36 @@ a:hover {
   mask-composite: exclude;
 }
 
+ul.professional li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 4px solid rgb(27, 34, 46);
+  background: rgb(12, 21, 29);
+  border-radius: 50%;
+  left: -30px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+ul.professional li:hover::before {
+  background: #ff351a;
+  animation: pulse 2s infinite;
+}
+
+ul.professional li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background: rgb(27, 34, 46);
+  left: -22px;
+  top: 0;
+}
+
 @media (max-width: 999px) {
   .background-video {
     left: 50%;
@@ -238,5 +272,17 @@ a:hover {
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background-color: transparent;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background: #ff351a;
+  }
+  50% {
+    background: rgb(12, 21, 29);
+  }
+  100% {
+    background: #ff351a;
   }
 }
