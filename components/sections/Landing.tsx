@@ -9,7 +9,7 @@ const list = [
   },
   {
     name: "instagram",
-    link: "https://www.instagram.com/david_rose_luthier",
+    link: "https://www.instagram.com/shagbagginz",
   },
   {
     name: "twitter",
@@ -28,7 +28,7 @@ const Landing = () => {
     event.preventDefault();
   };
   return (
-    <div className="video-background">
+    <div id="home" className="video-background">
       <video
         ref={videoRef}
         loop

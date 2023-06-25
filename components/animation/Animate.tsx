@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 interface AnimatedSlideInElementProps {
   direction: "left" | "right" | "up" | "down";
   delay?: number;
+  view?: boolean | null;
   children: ReactNode;
 }
 
@@ -38,6 +39,7 @@ export const slideAnimation = (direction: string, delay: number) => {
 const Animate: React.FC<AnimatedSlideInElementProps> = ({
   direction,
   delay = 0,
+  view = null,
   children,
 }) => {
   const [ref, inView] = useInView({
@@ -45,13 +47,20 @@ const Animate: React.FC<AnimatedSlideInElementProps> = ({
     threshold: 0.5,
   });
 
+  const handleView = () => {
+    if (view != null)
+      if (view) return "animate";
+      else return "initial";
+    else return inView ? "animate" : "initial";
+  };
+
   const animation = slideAnimation(direction, delay);
 
   return (
     <motion.div
       ref={ref}
       initial="initial"
-      animate={inView ? "animate" : "initial"}
+      animate={handleView()}
       exit="exit"
       variants={animation}
     >
