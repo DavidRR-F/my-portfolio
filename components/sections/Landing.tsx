@@ -1,6 +1,6 @@
 "use client";
 import { MutableRefObject, useRef } from "react";
-import Animate from "../components/animation/Animate";
+import Animate from "../animation/Animate";
 
 const list = [
   {
@@ -42,8 +42,9 @@ const Landing = () => {
       <div className="video-wrapper"></div>
       <div className="title">
         <Animate direction="down">
-          <h1 className=" text-gray-300 font-semibold text-6xl mobile:text-dynamic select-none">
-            David Rose-Franklin
+          <h1 className="flex flex-nowrap items-center justify-center text-gray-300 font-semibold text-6xl mobile:text-dynamic phone:flex-wrap select-none">
+            <span className="pr-2 phone:pr-0">David</span>
+            <span>Rose-Franklin</span>
           </h1>
         </Animate>
         <Animate direction="up">

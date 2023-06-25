@@ -1,8 +1,8 @@
-import About from "@/sections/About";
-import Contact from "@/sections/Contact";
-import Landing from "@/sections/Landing";
-import Experience from "@/sections/Experience";
-import Skills from "@/sections/Skills";
+import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
+import Landing from "@/components/sections/Landing";
+import Experience from "@/components/sections/Experience";
+import Skills from "@/components/sections/Skills";
 
 export default function Home() {
   return (
