@@ -79,16 +79,8 @@ progress::-moz-progress-bar {
   border-radius: 10px;
 }
 
-a {
-  background-image: none;
-  transition: all 0.5s;
-}
-
-a:hover {
-  background-image: linear-gradient(to bottom right, #ff836d 50%, #ffdaab 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.5s;
+section {
+  height: calc(100vh - 64px);
 }
 
 ul {

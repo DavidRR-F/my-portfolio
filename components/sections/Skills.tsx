@@ -66,7 +66,7 @@ const Skills = () => {
           <Animate direction="down" delay={index / 10 + 0.5}>
             <Card>
               <div className="flex flex-col justify-between items-center min-h-full">
-                <section>
+                <div>
                   <div className="flex justify-start items-center gap-3">
                     <img
                       src={skill.icon}
@@ -78,8 +78,8 @@ const Skills = () => {
                     </h2>
                   </div>
                   <StaggerChildren text={skill.text} keys={skill.frameworks} />
-                </section>
-                <section>
+                </div>
+                <div>
                   <ul className="flex gap-5">
                     {skill.toolIcons.map((icon, index) => (
                       <IconToolTip text={icon.tip}>
@@ -91,7 +91,7 @@ const Skills = () => {
                       </IconToolTip>
                     ))}
                   </ul>
-                </section>
+                </div>
               </div>
             </Card>
           </Animate>
