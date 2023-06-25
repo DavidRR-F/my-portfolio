@@ -28,7 +28,7 @@ const Landing = () => {
     event.preventDefault();
   };
   return (
-    <div id="home" className="video-background">
+    <section id="home" className="video-background">
       <video
         ref={videoRef}
         loop
@@ -66,7 +66,7 @@ const Landing = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

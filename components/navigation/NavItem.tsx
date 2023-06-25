@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { Link } from "react-scroll";
+import { useStateContext } from "../Providers";
 
 interface NavItemProps {
   order: number;
@@ -7,6 +9,7 @@ interface NavItemProps {
 }
 
 const NavItem: React.FC<NavItemProps> = ({ order, name }) => {
+  const { activeSection } = useStateContext();
   return (
     <li className="flex justify-center items-center">
       <Link
@@ -20,7 +23,13 @@ const NavItem: React.FC<NavItemProps> = ({ order, name }) => {
       >
         {name}
       </Link>
-      <span className="pt-1 left-12 top-0 text-xs font-mono text-gray-200 select-none">
+      <span
+        className={`pt-1 left-12 top-0 text-xs font-mono select-none ${
+          activeSection === name.toLowerCase()
+            ? "text-red-500"
+            : "text-gray-200"
+        }`}
+      >
         .0{order}
       </span>
     </li>

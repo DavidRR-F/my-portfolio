@@ -277,12 +277,12 @@ ul.professional li::after {
 
 @keyframes pulse {
   0% {
-    background: #ff351a;
-  }
-  50% {
     background: rgb(12, 21, 29);
   }
-  100% {
+  50% {
     background: #ff351a;
+  }
+  100% {
+    background: rgb(12, 21, 29);
   }
 }

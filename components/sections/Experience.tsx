@@ -52,7 +52,7 @@ const Experience = () => {
   return (
     <Section id="experience">
       <div className="grid grid-cols-2 w-full max-w-5xl">
-        <section className="flex flex-col gap-3 col-span-full p-3">
+        <div className="flex flex-col gap-3 col-span-full p-3">
           <Header label="Programing Skills" icon="/code.png" />
           {code.map((item, index) => (
             <div className="flex items-center">
@@ -69,19 +69,19 @@ const Experience = () => {
               />
             </div>
           ))}
-        </section>
-        <section className="flex flex-col gap-3 p-3">
+        </div>
+        <div className="flex flex-col gap-3 p-3">
           <Header label="Work Experience" icon="/work.png" />
           <div className="pl-16">
             <ProfessionListItem profession={work} />
           </div>
-        </section>
-        <section className="flex flex-col gap-3 p-3">
+        </div>
+        <div className="flex flex-col gap-3 p-3">
           <Header label="Education Level" icon="/education.png" />
           <div className="pl-16">
             <ProfessionListItem profession={education} />
           </div>
-        </section>
+        </div>
       </div>
     </Section>
   );

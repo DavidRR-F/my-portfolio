@@ -8,6 +8,7 @@ type ProviderProps = {
 type InitState = {
   activeMenu: boolean;
   setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  activeSection: string;
   isMobile: boolean | null;
   notTop: boolean | null;
 };
@@ -15,6 +16,7 @@ type InitState = {
 const StateContext = createContext<InitState>({
   activeMenu: false,
   setActiveMenu: () => {},
+  activeSection: "",
   isMobile: null,
   notTop: null,
 });
@@ -23,6 +25,7 @@ const Providers = ({ children }: ProviderProps) => {
   const [activeMenu, setActiveMenu] = useState(false);
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [notTop, setNotTop] = useState<boolean | null>(null);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,20 +49,36 @@ const Providers = ({ children }: ProviderProps) => {
   }, []);
 
   useEffect(() => {
-    const handleNav = () => {
+    const handleScroll = () => {
       setNotTop(window.scrollY > 600);
+      const sections = document.querySelectorAll("section");
+      let maxVisibleArea = 0;
+      let maxVisibleSectionId = "";
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const visibleArea =
+          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+
+        if (visibleArea > maxVisibleArea) {
+          maxVisibleArea = visibleArea;
+          maxVisibleSectionId = section.id;
+        }
+      });
+
+      setActiveSection(maxVisibleSectionId);
     };
 
-    window.addEventListener("scroll", handleNav);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleNav);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <StateContext.Provider
-      value={{ activeMenu, setActiveMenu, isMobile, notTop }}
+      value={{ activeMenu, setActiveMenu, activeSection, isMobile, notTop }}
     >
       {children}
     </StateContext.Provider>
