@@ -9,7 +9,7 @@ interface NavItemProps {
 }
 
 const NavItem: React.FC<NavItemProps> = ({ order, name }) => {
-  const { activeSection } = useStateContext();
+  const { activeSection, setActiveMenu } = useStateContext();
   return (
     <li className="flex justify-center items-center">
       <Link
@@ -20,6 +20,7 @@ const NavItem: React.FC<NavItemProps> = ({ order, name }) => {
         smooth={true}
         offset={-70}
         duration={500}
+        onClick={() => setActiveMenu(false)}
       >
         {name}
       </Link>

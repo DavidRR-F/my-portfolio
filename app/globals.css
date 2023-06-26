@@ -235,6 +235,7 @@ ul.professional li::after {
 }
 
 .menu {
+  position: relative;
   width: fit-content;
   margin: 15px 5px;
 }
@@ -255,7 +256,7 @@ ul.professional li::after {
 .menu span:before,
 .menu span:after {
   height: var(--menu-height);
-  background-color: #ff351a;
+  @apply bg-forground-200;
   border-radius: 10px;
   display: block;
 }
