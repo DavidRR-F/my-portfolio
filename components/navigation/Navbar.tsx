@@ -17,7 +17,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between w-full h-20 p-4">
           <Logo />
           {isMobile ? (
-            <button onClick={handleActiveMenu}>
+            <button
+              className="flex items-center justify-center w-min h-fit"
+              onClick={handleActiveMenu}
+            >
               <MenuIcon />
             </button>
           ) : (

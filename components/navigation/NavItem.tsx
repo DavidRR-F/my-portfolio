@@ -30,7 +30,7 @@ const NavItem: React.FC<NavItemProps> = ({ order, name }) => {
             : "text-gray-200"
         }
         transition-colors
-        duration-700
+        duration-500
         `}
       >
         .0{order}
