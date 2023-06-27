@@ -25,7 +25,9 @@ const IconToolTip: React.FC<ToolTipProps> = ({ text, children }) => {
     >
       {children}
       {isTooltipVisible && (
-        <div className="absolute bg-gray-500 text-green-50">{text}</div>
+        <div className="absolute bg-gray-700 text-green-50 pl-1 pr-1 rounded-md mt-1">
+          {text}
+        </div>
       )}
     </div>
   );
