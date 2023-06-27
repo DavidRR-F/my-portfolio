@@ -29,7 +29,7 @@ const listItems = [
 const NavItems: React.FC<NavItemsProps> = ({ secondary = false }) => {
   const { isMobile } = useStateContext();
   return (
-    <ul className="flex flex-row items-center gap-5 mobile:flex-col pr-5 text-lg">
+    <ul className="flex flex-row justify-center items-center gap-5 mobile:flex-col mobile:h-full mobile:p-0 pr-5 text-lg">
       {(secondary || isMobile) && <NavItem order={0} name={"Home"} />}
       {listItems.map((item) => (
         <NavItem key={item.key} order={item.key} name={item.name} />

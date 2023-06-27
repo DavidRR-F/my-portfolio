@@ -13,7 +13,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <header className="absolute w-full z-20">
+      <header className="absolute w-full z-30">
         <div className="flex items-center justify-between w-full h-20 p-4">
           <Logo />
           {isMobile ? (
@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      <header className="fixed w-full z-10">
+      <header className="fixed w-full z-20">
         <Animate direction="down" view={notTop}>
           <div className="flex items-center justify-between w-full h-20 p-4 bg-background-200 opacity-90">
             <Logo />

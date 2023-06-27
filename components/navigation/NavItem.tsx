@@ -13,7 +13,7 @@ const NavItem: React.FC<NavItemProps> = ({ order, name }) => {
   return (
     <li className="flex justify-center items-center">
       <Link
-        className="text-gray-300 hover:text-primary-200 transition-colors duration-300 cursor-pointer"
+        className="text-gray-300 hover:text-primary-200 transition-colors duration-300 cursor-pointer mobile:text-3xl"
         activeClass="active"
         to={name.toLowerCase()}
         spy={true}

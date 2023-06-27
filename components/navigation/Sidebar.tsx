@@ -6,15 +6,13 @@ import NavItems from "./NavItems";
 const Sidebar = () => {
   const { activeMenu } = useStateContext();
   return (
-    <>
-      {activeMenu ? (
-        <div className="w-72 h-full fixed transition-all z-10">
-          <NavItems />
-        </div>
-      ) : (
-        <div className="w-0 h-full fixed transition-all z-10"></div>
-      )}
-    </>
+    <div
+      className={`${
+        activeMenu ? "left-0" : "-left-full"
+      } w-full h-full fixed transition-all duration-500 z-10 bg-background-200 opacity-90`}
+    >
+      <NavItems />
+    </div>
   );
 };
 
