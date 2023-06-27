@@ -10,9 +10,9 @@ const skills = [
     title: "Frontend Dev",
     icon: "/frontend.svg",
     frameworks: [
-      { name: "React", color: "sky" },
-      { name: "NextJS", color: "red" },
-      { name: "Angular", color: "pink" },
+      { name: "React", color: "decoration-sky-500" },
+      { name: "NextJS", color: "decoration-lime-500" },
+      { name: "Angular", color: "decoration-red-500" },
     ],
     text: "With a strong passion for UI/UX design, I bring a dedicated focus on creating exceptional user experiences. My expertise lies in leveraging React with NextJS and Angular to develop cutting-edge web applications.",
 
@@ -26,9 +26,9 @@ const skills = [
     title: "Backend Dev",
     icon: "/backend.svg",
     frameworks: [
-      { name: "SpringBoot", color: "lime" },
-      { name: "ExpressJS", color: "blue" },
-      { name: "FastAPI", color: "green" },
+      { name: "SpringBoot", color: "decoration-lime-500" },
+      { name: "ExpressJS", color: "decoration-sky-500" },
+      { name: "FastAPI", color: "decoration-red-500" },
     ],
     text: "I bring a dedicated focus on building robust and efficient server-side applications. I utilize SpringBoot to create powerful backend solutions with experience in ExpressJS and FastAPI for smaller microservice solution.",
 
@@ -42,10 +42,10 @@ const skills = [
     title: "DevOps",
     icon: "/devops.png",
     frameworks: [
-      { name: "Docker", color: "blue" },
-      { name: "Kubernetes", color: "sky" },
-      { name: "CI/CD", color: "lime" },
-      { name: "Cloud", color: "red" },
+      { name: "Docker", color: "decoration-blue-500" },
+      { name: "Kubernetes", color: "decoration-sky-500" },
+      { name: "CI/CD", color: "decoration-lime-500" },
+      { name: "Cloud", color: "decoration-red-500" },
     ],
     text: "Experience with Docker and Kubernetes to ensuring efficient application Cloud deployment to end users. Experties in CI/CD development workflows to deploy and enforcing source code version controls.",
     toolIcons: [

@@ -55,9 +55,9 @@ export const StaggerChildren: React.FC<StaggerChildrenProps> = ({
           <motion.span key={index} variants={wordVariants}>
             {keys.find((obj) => obj.name === word) ? (
               <strong
-                className={`underline decoration-2 text-forground-100 decoration-${
+                className={`underline decoration-2 text-forground-100 ${
                   keys.find((obj) => obj.name === word)?.color
-                }-500`}
+                }`}
               >
                 {word}
               </strong>
