@@ -17,7 +17,7 @@ export const StaggerChildren: React.FC<StaggerChildrenProps> = ({
   keys,
 }) => {
   const words = text.split(" ");
-  const keyNames = keys.map((key) => key.name);
+
   const containerVariants = {
     hidden: {
       opacity: 1,
