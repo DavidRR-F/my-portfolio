@@ -11,8 +11,11 @@ export default function Home() {
       <Landing />
       <BorderAnimation />
       <About />
+      <BorderAnimation />
       <Skills />
+      <BorderAnimation />
       <Experience />
+      <BorderAnimation />
       <Contact />
     </main>
   );

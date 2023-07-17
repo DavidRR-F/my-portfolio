@@ -3,6 +3,8 @@ import Section from "@/components/Section";
 import Animate from "@/components/animation/Animate";
 import { motion } from "framer-motion";
 import React from "react";
+import Card from "../Card";
+import { Profile } from "../animation/Profile";
 
 const text =
   "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus sunt molestias sequi ratione veritatis ad, atque accusantium, nulla non quia reiciendis! Aperiam quo magni in minus dicta deleniti nostrum labore! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi perspiciatis tenetur ab rerum incidunt sit error aliquam at necessitatibus nostrum quod nulla exercitationem, deleniti explicabo laudantium vitae quos nesciunt dolorem!";
@@ -38,7 +40,13 @@ const About = () => {
 
   return (
     <Section id="about">
-      <div>Profile Pic or 3D Animation</div>
+      <Card>
+        <h2>David Rose-Franklin</h2>
+        <span>Software Developer</span>
+        <div className="absolute">
+          <Profile />
+        </div>
+      </Card>
       <div>
         <Animate direction="down">
           <h2 className=" text-forground-100 text-4xl">

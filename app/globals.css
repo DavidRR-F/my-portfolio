@@ -93,7 +93,7 @@ progress::-moz-progress-bar {
 }
 
 section {
-  height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
 }
 
 ul {
@@ -360,4 +360,8 @@ ul.professional li::after {
   100% {
     background: rgb(12, 21, 29);
   }
+}
+
+.item {
+  width: 1800px;
 }

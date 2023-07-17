@@ -37,7 +37,7 @@ export const BorderAnimation = () => {
   };
 
   return (
-    <div className="container">
+    <div className="relative">
       <motion.svg
         xmlns="/border2.svg"
         viewBox="0 0 1800 200"
