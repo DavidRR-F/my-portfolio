@@ -61,6 +61,7 @@ const skills = [
 const Skills = () => {
   return (
     <Section id="skills" className="flex-col">
+      <h2 className=" font-bold alt-font text-6xl">A Full Stack of Skills</h2>
       <div className="flex gap-5 flex-wrap">
         {skills.map((skill, index) => (
           <Animate direction="down" delay={index / 10 + 0.5}>

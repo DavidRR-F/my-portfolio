@@ -1,38 +1,32 @@
 "use client";
-import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { easing } from "maath";
+import { Canvas } from "@react-three/fiber";
+import { Environment, Center, OrbitControls } from "@react-three/drei";
+import Camera from "./Camera";
+import CanvasModel from "./CanvasModel";
 import React from "react";
+import { ContactShadows } from "@react-three/drei";
 
 const Model = () => {
-  const { nodes, materials } = useGLTF("/woman_bust_2.glb") as any;
-  const rotation: [number, number, number] = [
-    -Math.PI / 2,
-    Math.PI / 1,
-    Math.PI / 1,
-  ];
-  const potition: [number, number, number] = [0, 0, 0];
-  const scale = 0.8;
-  console.log("Nodes", nodes);
-  console.log("Material", materials);
-  materials.mia_material_x1SG.metalness = 0.2;
-  materials.mia_material_x1SG.roughness = 0.3;
-  useFrame((state, delta) => {
-    easing.dampC(materials.mia_material_x1SG.color, "white", delta);
-  });
-
   return (
-    <group key={1}>
-      <mesh
-        castShadow
-        geometry={nodes.veiledVirgin_tris.geometry}
-        material={materials.mia_material_x1SG}
-        rotation={rotation}
-        position={potition}
-        scale={scale}
-        dispose={null}
-      ></mesh>
-    </group>
+    <div className="canvas-container">
+      <Canvas
+        shadows
+        eventPrefix="page"
+        camera={{ position: [-15, 0, 100], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+        className="w-full h-full transition-all ease-in"
+      >
+        <hemisphereLight color="yellow" groundColor="red" intensity={0.75} />
+        <spotLight position={[50, 50, 10]} angle={0.15} penumbra={1} />
+        <Camera>
+          <Center>
+            <CanvasModel />
+            <ContactShadows scale={40} blur={10} far={20} />
+          </Center>
+          {/* <OrbitControls /> */}
+        </Camera>
+      </Canvas>
+    </div>
   );
 };
 
