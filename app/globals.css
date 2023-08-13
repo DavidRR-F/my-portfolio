@@ -137,6 +137,16 @@ ul {
   border-radius: 10px;
 }
 
+.floating-input-field label {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 6px rgb(27, 34, 46), inset 0 2px 4px rgb(69, 87, 117);
+}
+
 .video-background {
   position: relative;
   width: 100vw;
@@ -210,6 +220,10 @@ ul {
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+}
+
+#logo {
+  columns: #908c8c;
 }
 
 ul.professional li::before {

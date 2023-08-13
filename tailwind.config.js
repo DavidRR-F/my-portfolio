@@ -36,6 +36,7 @@ module.exports = {
         background: {
           100: "rgb(27, 34, 46)",
           200: "rgb(12, 21, 29)",
+          300: "rgb(65, 76, 95)",
         },
         "tinted-black": "rgb(27, 34, 46)",
         "neon-blue": "#0BF9EA",

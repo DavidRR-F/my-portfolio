@@ -3,11 +3,13 @@ import React, { useRef, useEffect } from "react";
 import { easing } from "maath";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
+import { useHolographicMaterial } from "./HolographicMaterial";
 
 const CanvasModel = () => {
   const gltf: any = useGLTF("/woman_bust_2.glb");
   const nodes: any = gltf.nodes;
   const materials: any = gltf.materials;
+  const holographicMaterial = useHolographicMaterial();
   const rotation: [number, number, number] = [
     -Math.PI / 2,
     Math.PI / 1,
@@ -27,7 +29,7 @@ const CanvasModel = () => {
       <mesh
         castShadow
         geometry={nodes.veiledVirgin_tris.geometry}
-        material={materials.mia_material_x1SG}
+        material={nodes.veiledVirgin_tris.material}
         rotation={rotation}
         position={potition}
         scale={scale}

@@ -16,7 +16,7 @@ const Model = () => {
         gl={{ preserveDrawingBuffer: true }}
         className="w-full h-full transition-all ease-in"
       >
-        <hemisphereLight color="yellow" groundColor="red" intensity={0.75} />
+        <hemisphereLight color="white" groundColor="red" intensity={2} />
         <spotLight position={[50, 50, 10]} angle={0.15} penumbra={1} />
         <Camera>
           <Center>
