@@ -5,97 +5,16 @@ import Animate from "@/components/animation/Animate";
 import { StaggerChildren } from "@/components/animation/StaggerChildren";
 import React from "react";
 import ScrollList from "../ScrollList";
-
-const icons = [
-  {
-    image: "/figma.svg",
-    tip: "Figma",
-  },
-  {
-    image: "/tailwindcss.svg",
-    tip: "Tailwind CSS",
-  },
-  {
-    image: "/github.svg",
-    tip: "Github",
-  },
-  {
-    image: "/jenkins.svg",
-    tip: "Jenkins",
-  },
-  {
-    image: "/jenkins.svg",
-    tip: "Jenkins",
-  },
-  {
-    image: "/jenkins.svg",
-    tip: "Jenkins",
-  },
-];
-
-const skills = [
-  {
-    title: "Fullstack Dev",
-    icon: "/frontend.svg",
-    frameworks: [
-      { name: "React", color: "decoration-sky-500" },
-      { name: "Angular", color: "decoration-red-500" },
-      { name: "SpringBoot", color: "decoration-lime-500" },
-    ],
-    text: "With a strong passion for UI/UX design, I bring a dedicated focus on creating exceptional user experiences with React and Angular frontend frameworks and SpringBoot backends to develop data driven web applications.",
-
-    toolIcons: [
-      { tip: "Tailwindcss", image: "/tailwindcss.svg" },
-      { tip: "SASS", image: "/sass.svg" },
-      { tip: "Figma", image: "/figma.svg" },
-    ],
-  },
-  {
-    title: "Data Engineer",
-    icon: "/backend.svg",
-    frameworks: [
-      { name: "Spark", color: "decoration-sky-500" },
-      { name: "Kafka", color: "decoration-red-500" },
-      { name: "Python", color: "decoration-lime-500" },
-    ],
-    text: "Streaming buisness using Python data pipeline and implementing big data solutions with tools like Spark and Kafka in order to process large amounts of data for analytical and machine learning operations.",
-
-    toolIcons: [
-      { tip: "Tailwindcss", image: "/tailwindcss.svg" },
-      { tip: "SASS", image: "/sass.svg" },
-      { tip: "Figma", image: "/figma.svg" },
-    ],
-  },
-  {
-    title: "Cloud/DevOps",
-    icon: "/devops.png",
-    frameworks: [
-      { name: "Docker", color: "decoration-blue-500" },
-      { name: "Kubernetes", color: "decoration-sky-500" },
-      { name: "CI/CD", color: "decoration-lime-500" },
-      { name: "Cloud", color: "decoration-red-500" },
-    ],
-    text: "Experience with Docker and Kubernetes to ensuring efficient application Cloud deployment to end users. Experties in CI/CD development workflows to deploy and enforcing source code version controls.",
-    toolIcons: [
-      { tip: "Jenkins", image: "/jenkins.svg" },
-      { tip: "Bitbucket", image: "/bitbucket.svg" },
-      { tip: "Github", image: "/ghactions.svg" },
-      { tip: "Azure", image: "/azure.svg" },
-      { tip: "AWS", image: "/aws.svg" },
-    ],
-  },
-];
-
+import { icons, skills } from "../constants/constants";
+const chunkSize = Math.ceil(icons.length / 4);
+const icons1 = icons.slice(0, chunkSize);
+const icons2 = icons.slice(chunkSize, 2 * chunkSize);
+const icons3 = icons.slice(2 * chunkSize, 3 * chunkSize);
+const icons4 = icons.slice(3 * chunkSize);
 const Skills = () => {
   return (
     <Section id="skills" className="flex-col">
-      <div className="w-96 h-52 whitespace-nowrap overflow-hidden">
-        <ScrollList skills={icons} direction="right" />
-        <ScrollList skills={icons} direction="left" />
-        <ScrollList skills={icons} direction="right" />
-        <ScrollList skills={icons} direction="left" />
-      </div>
-      <div className="flex gap-5 flex-wrap">
+      <div className="flex flex-row gap-5 flex-wrap">
         {skills.map((skill, index) => (
           <Animate direction="down" delay={index / 10 + 0.5}>
             <Card>
@@ -130,6 +49,12 @@ const Skills = () => {
             </Card>
           </Animate>
         ))}
+      </div>
+      <div className="w-[1000px] h-56 whitespace-nowrap overflow-hidden">
+        <ScrollList skills={icons1} direction="right" />
+        <ScrollList skills={icons2} direction="left" />
+        <ScrollList skills={icons3} direction="right" />
+        <ScrollList skills={icons4} direction="left" />
       </div>
     </Section>
   );

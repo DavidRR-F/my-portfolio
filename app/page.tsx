@@ -9,7 +9,9 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <Landing />
+      <BorderAnimation />
       <About />
+      <BorderAnimation />
       <Skills />
       <Experience />
       <Contact />
