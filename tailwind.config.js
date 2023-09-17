@@ -13,8 +13,30 @@ module.exports = {
       tablet: { max: "1000px" },
     },
     extend: {
+      keyframes: {
+        "slide-right": {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
+        },
+        "slide-left": {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
+      },
+      animation: {
+        "slide-right": "15s slide-right infinite linear",
+        "slide-left": "15s slide-left infinite linear",
+      },
       rotate: {
-        left: "-5deg", // Adjust the degree of rotation as needed
+        left: "-5deg",
       },
       fontSize: {
         dynamic: "9.5vw",
@@ -32,6 +54,7 @@ module.exports = {
         forground: {
           100: "rgb(209 213 219)",
           200: "rgb(156 163 175)",
+          300: "rgb(105, 110, 119)",
         },
         background: {
           100: "rgb(27, 34, 46)",
@@ -50,5 +73,13 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".animate-paused > *": {
+          "animation-play-state": "paused",
+        },
+      });
+    },
+  ],
 };

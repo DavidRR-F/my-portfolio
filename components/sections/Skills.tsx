@@ -4,17 +4,45 @@ import Section from "@/components/Section";
 import Animate from "@/components/animation/Animate";
 import { StaggerChildren } from "@/components/animation/StaggerChildren";
 import React from "react";
+import ScrollList from "../ScrollList";
+
+const icons = [
+  {
+    image: "/figma.svg",
+    tip: "Figma",
+  },
+  {
+    image: "/tailwindcss.svg",
+    tip: "Tailwind CSS",
+  },
+  {
+    image: "/github.svg",
+    tip: "Github",
+  },
+  {
+    image: "/jenkins.svg",
+    tip: "Jenkins",
+  },
+  {
+    image: "/jenkins.svg",
+    tip: "Jenkins",
+  },
+  {
+    image: "/jenkins.svg",
+    tip: "Jenkins",
+  },
+];
 
 const skills = [
   {
-    title: "Frontend Dev",
+    title: "Fullstack Dev",
     icon: "/frontend.svg",
     frameworks: [
       { name: "React", color: "decoration-sky-500" },
-      { name: "NextJS", color: "decoration-lime-500" },
       { name: "Angular", color: "decoration-red-500" },
+      { name: "SpringBoot", color: "decoration-lime-500" },
     ],
-    text: "With a strong passion for UI/UX design, I bring a dedicated focus on creating exceptional user experiences. My expertise lies in leveraging React with NextJS and Angular to develop cutting-edge web applications.",
+    text: "With a strong passion for UI/UX design, I bring a dedicated focus on creating exceptional user experiences with React and Angular frontend frameworks and SpringBoot backends to develop data driven web applications.",
 
     toolIcons: [
       { tip: "Tailwindcss", image: "/tailwindcss.svg" },
@@ -23,23 +51,23 @@ const skills = [
     ],
   },
   {
-    title: "Backend Dev",
+    title: "Data Engineer",
     icon: "/backend.svg",
     frameworks: [
-      { name: "SpringBoot", color: "decoration-lime-500" },
-      { name: "ExpressJS", color: "decoration-sky-500" },
-      { name: "FastAPI", color: "decoration-red-500" },
+      { name: "Spark", color: "decoration-sky-500" },
+      { name: "Kafka", color: "decoration-red-500" },
+      { name: "Python", color: "decoration-lime-500" },
     ],
-    text: "I bring a dedicated focus on building robust and efficient server-side applications. I utilize SpringBoot to create powerful backend solutions with experience in ExpressJS and FastAPI for smaller microservice solution.",
+    text: "Streaming buisness using Python data pipeline and implementing big data solutions with tools like Spark and Kafka in order to process large amounts of data for analytical and machine learning operations.",
 
     toolIcons: [
-      { tip: "PostgreSQL", image: "/postgresql.svg" },
-      { tip: "MySQL", image: "/mysql.svg" },
-      { tip: "MongoDB", image: "/mongodb.svg" },
+      { tip: "Tailwindcss", image: "/tailwindcss.svg" },
+      { tip: "SASS", image: "/sass.svg" },
+      { tip: "Figma", image: "/figma.svg" },
     ],
   },
   {
-    title: "DevOps",
+    title: "Cloud/DevOps",
     icon: "/devops.png",
     frameworks: [
       { name: "Docker", color: "decoration-blue-500" },
@@ -61,7 +89,12 @@ const skills = [
 const Skills = () => {
   return (
     <Section id="skills" className="flex-col">
-      <h2 className=" font-bold alt-font text-6xl">A Full Stack of Skills</h2>
+      <div className="w-96 h-52 whitespace-nowrap overflow-hidden">
+        <ScrollList skills={icons} direction="right" />
+        <ScrollList skills={icons} direction="left" />
+        <ScrollList skills={icons} direction="right" />
+        <ScrollList skills={icons} direction="left" />
+      </div>
       <div className="flex gap-5 flex-wrap">
         {skills.map((skill, index) => (
           <Animate direction="down" delay={index / 10 + 0.5}>
