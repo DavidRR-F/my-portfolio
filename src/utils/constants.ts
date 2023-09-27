@@ -38,9 +38,37 @@ export const socialList = [
 
 export const projectList = [
   {
-    image: "./assets/projects/1.png",
-    header: "David Rose-Franklin",
-    headerDesc: "Boom",
+    image: "typescript.svg",
+    header: "Frontend Development",
+    headerDesc: "React and Angular Frameworks",
+    subHeader: "Does Things",
+    subHeaderDesc: "Bing Bong",
+  },
+  {
+    image: "java.svg",
+    header: "Backend Development",
+    headerDesc: "Spring Boot APIs and Microservices",
+    subHeader: "Does Things",
+    subHeaderDesc: "Bing Bong",
+  },
+  {
+    image: "python.svg",
+    header: "Data Engineering",
+    headerDesc: "ETL Pipelines and Machine Learning",
+    subHeader: "Does Things",
+    subHeaderDesc: "Bing Bong",
+  },
+  {
+    image: "azure-1.svg",
+    header: "Azure Cloud Developement",
+    headerDesc: "Azure DevOps and CI/CD",
+    subHeader: "Does Things",
+    subHeaderDesc: "Bing Bong",
+  },
+  {
+    image: "linux.svg",
+    header: "Linux Systems",
+    headerDesc: "Bash Scripting and Debian Servers",
     subHeader: "Does Things",
     subHeaderDesc: "Bing Bong",
   },

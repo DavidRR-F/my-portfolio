@@ -1,4 +1,7 @@
+import FadeIn from "animation/FadeIn";
+
 interface HeaderCardProps {
+  index: number;
   image: string;
   header: string;
   headerDesc: string;
@@ -7,6 +10,7 @@ interface HeaderCardProps {
 }
 
 const HeaderCard: React.FC<HeaderCardProps> = ({
+  index,
   image,
   header,
   headerDesc,
@@ -14,21 +18,23 @@ const HeaderCard: React.FC<HeaderCardProps> = ({
   subHeaderDesc,
 }) => {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-8 mb-16 max-w-[90%] w-[1300px] h-auto">
-      <div className="flex justify-center items-center h-[74px] w-[74px] rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
-        <img className="w-[55%] h-[55%]" src={image} alt="" />
-      </div>
-      <div>
-        <div>
-          <h3>{header}</h3>
-          <p>{headerDesc}</p>
+    <FadeIn direction="down" delay={index / 10 + 0.5}>
+      <div className="font-open-sans flex flex-wrap justify-center items-center gap-5 mb-12 w-fit h-auto rounded-full border border-solid border-primary-100 border-opacity-10 shadow-lg shadow-black">
+        <div className="flex justify-center items-center h-[74px] w-[74px] rounded-full bg-gradient-to-r from-secondary-100 to-secondary-200 shadow-lg shadow-black">
+          <img className="w-[70%] h-[70%]" src={image} alt="" />
         </div>
-        <div>
-          <h3>{subHeader}</h3>
-          <p>{subHeaderDesc}</p>
+        <div className="h-[60px] w-[286px] m-1 overflow-hidden relative">
+          <div className="flex flex-col gap-1 justify-center items-start h-14 absolute">
+            <h3 className="font-semibold text-lg">{header}</h3>
+            <p>{headerDesc}</p>
+          </div>
+          {/* <div>
+            <h3>{subHeader}</h3>
+            <p>{subHeaderDesc}</p>
+            </div> */}
         </div>
       </div>
-    </div>
+    </FadeIn>
   );
 };
 
